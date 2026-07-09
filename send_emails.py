@@ -12,7 +12,7 @@ EMAIL_ADDRESS = os.getenv("EMAIL_USER")
 APP_PASSWORD = os.getenv("EMAIL_PASSWORD")
 
 # Paths must be relative to the GitHub repository root
-RESUME_PATH = "SADE_SURENDRA_Resume_latest.docx" 
+RESUME_PATH = "SADE_SURENDRA_Updated_2026.pdf" 
 GOOGLE_SHEET_NAME = "recruiter_emails" 
 DAILY_LIMIT = 100
 
@@ -31,7 +31,7 @@ def get_google_sheet():
 
 def send_email(target_email):
     msg = EmailMessage()
-    msg['Subject'] = "Job Application for DevOps Engineer Role || 5 Years of Exp || Immediate joiner"
+    msg['Subject'] = "Job Application for DevOps Engineer Role || 4 Years of Exp || Immediate joiner"
     msg['From'] = EMAIL_ADDRESS
     msg['To'] = target_email
 
@@ -65,7 +65,7 @@ sadesurendradevops@gmail.com
     try:
         with open(RESUME_PATH, 'rb') as f:
             pdf_data = f.read()
-            msg.add_attachment(pdf_data, maintype='application', subtype='pdf', filename='P_SAIKUMAR_REDDY_Resume.pdf')
+            msg.add_attachment(pdf_data, maintype='application', subtype='pdf', filename='SADE_SURENDRA_Updated_2026.pdf')
     except FileNotFoundError:
         print(f"Error: Could not find {RESUME_PATH}. Ensure it is committed to the repository.")
         raise
